@@ -175,11 +175,11 @@ MFSGrp =function(Ytrain,Xtrain, basisno=5 ,tt, lambda=NULL, alpha=NULL ,
                   lambdafactor=0.005, nfolds=5, 
                   predloss="L2", eps = 1e-08, maxit = 3e+08, nlambda=100, forcezero=FALSE, 
                   forcezeropar=0.001, sixplotnum=1, lambdaderivative=NULL,
-                  nfolder=5, nalpha=9, nlamder=10, lamdermin=1e-9, lamdermax=1e-3,alphamin=0 ,alphamax=1,
-                  a=3.7, ADMM=FALSE,numcores=NULL, rho=1 , unbalanced=FALSE){
+                  nfolder=5, nalpha=9, nlamder=10, lamdermin=1e-9, lamdermax=1e-3,alphamin=0 ,alphamax=1,loss="ls",
+                  a=3.7, ADMM=FALSE,numcores=NULL, rho=1 , unbalanced=FALSE ){
   
   
-  loss="ls";
+
   Y=Ytrain; X=Xtrain;
   #######if( ) stop("orthaganlization must be one (orth=T) if ")
   if(bspline==T) {fpca=T} else {fpca=F}
