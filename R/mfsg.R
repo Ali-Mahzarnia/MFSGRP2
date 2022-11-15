@@ -257,7 +257,8 @@ MFSGrp =function(Ytrain,Xtrain, basisno=5 ,tt, lambda=NULL, alpha=NULL ,
   cum_part = cumsum(part)
   # Centerize Y through subtracting mean
   Ymean=mean(Y)
-  Y=Y-Ymean
+  if (loss != "logit"){
+  Y=Y-Ymean}
   
   # in beta update this is used   #diagonal of blocks of Graham
   GG=Matrix::bdiag(replicate(p, Gram , simplify = FALSE))%*%diag(m*p)
